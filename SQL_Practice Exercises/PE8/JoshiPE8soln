@@ -1,0 +1,30 @@
+#Question1
+select name from recipe where Source like "Mom";
+
+#Question2
+select name from recipe where RecipeId in (select RecipeId from nutrition where unit="calories" and quantity<800);
+
+#Question3
+select ing.name,ingl.quantity from ingredients ing  JOIN ingredientlist ingl using(IngredientId) JOIN recipe rep using(recipeId)
+where rep.name like "Beef Parmesan with Garlic Angel Hair Pasta";
+
+#Question4
+select distinct rep.name from recipe rep join ingredientlist ingl using(recipeId) join ingredients ing using(IngredientId) where ing.type not in ("beef","pork","chicken","lamb");
+
+Beef Parmesan with Garlic Angel Hair Pasta
+Crispy Fried Chicken
+
+
+10
+13
+20
+23
+31
+32
+41
+42
+43
+
+
+#Question5
+select rep.name from recipe rep 

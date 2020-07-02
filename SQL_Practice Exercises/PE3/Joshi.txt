@@ -1,0 +1,153 @@
+mysql> -- Joshi,Kunal
+mysql> -- 09/12/2019
+mysql> --  Database Homework
+mysql> --  Section ISTE230.01
+mysql> --  PE#3 Due Friday 9/13/2019
+mysql> --  Professor Habermas - Office (GOL) 2443
+mysql> --  EMAIL  kj4732@rit.edu
+mysql> select 'ISTE-230-01', 'PE03' as "Joshi,Kunal Deepak",curdate() as "Todays Date";
+--------------
+select 'ISTE-230-01', 'PE03' as "Joshi,Kunal Deepak",curdate() as "Todays Date"
+--------------
+
++-------------+--------------------+-------------+
+| ISTE-230-01 | Joshi,Kunal Deepak | Todays Date |
++-------------+--------------------+-------------+
+| ISTE-230-01 | PE03               | 2019-09-12  |
++-------------+--------------------+-------------+
+1 row in set (0.01 sec)
+
+mysql> # Creating Automobile table in PE3 Database
+mysql> SOURCE D:\DATABASE\PE\PE3\Automobile_Create_table_script.sql
+--------------
+create table Automobile
+(
+Make varchar(15),
+Model varchar(15),
+Year char(4),
+Color char(15),
+Style char(15),
+MSRP double,
+VIN smallint(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+PRIMARY KEY(VIN)
+)
+--------------
+
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> # Inserting records in Automobile table in PE3 Database
+mysql> SOURCE D:\DATABASE\PE\PE3\Automobile_Insert_script.sql
+--------------
+Insert into Automobile(Make,Model,Year,Color,Style,MSRP) values ("Chevy","Volt","2017","White","Hybrid",39290.99)
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+Insert into Automobile(Make,Model,Year,Color,Style,MSRP) values ("Ford","Mustang","2019","Blue","Convertible",47900.99)
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into Automobile(Make,Model,Year,Color,Style,MSRP) values ("Toyota","Prius","2018","Silver","Hybrid",25000.99)
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into Automobile(Make,Model,Year,Color,Style,MSRP) values ("Toyota","Camry","2008","Blue","Sedan",2000.50)
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into Automobile(Make,Model,Year,Color,Style,MSRP) values ("Dodge","1500","2007","Green","Pickup",1799.99)
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+mysql> # Display all records in Automobile table horizontally
+mysql> select * from Automobile;
+--------------
+select * from Automobile
+--------------
+
++--------+---------+------+--------+-------------+----------+-------+
+| Make   | Model   | Year | Color  | Style       | MSRP     | VIN   |
++--------+---------+------+--------+-------------+----------+-------+
+| Chevy  | Volt    | 2017 | White  | Hybrid      | 39290.99 | 00001 |
+| Ford   | Mustang | 2019 | Blue   | Convertible | 47900.99 | 00002 |
+| Toyota | Prius   | 2018 | Silver | Hybrid      | 25000.99 | 00003 |
+| Toyota | Camry   | 2008 | Blue   | Sedan       |  2000.50 | 00004 |
+| Dodge  | 1500    | 2007 | Green  | Pickup      |  1799.99 | 00005 |
++--------+---------+------+--------+-------------+----------+-------+
+5 rows in set (0.00 sec)
+
+mysql> # Display all records in Automobile table verticaly
+mysql> select * from Automobile \G
+--------------
+select * from Automobile
+--------------
+
+*************************** 1. row ***************************
+ Make: Chevy
+Model: Volt
+ Year: 2017
+Color: White
+Style: Hybrid
+ MSRP: 39290.99
+  VIN: 00001
+*************************** 2. row ***************************
+ Make: Ford
+Model: Mustang
+ Year: 2019
+Color: Blue
+Style: Convertible
+ MSRP: 47900.99
+  VIN: 00002
+*************************** 3. row ***************************
+ Make: Toyota
+Model: Prius
+ Year: 2018
+Color: Silver
+Style: Hybrid
+ MSRP: 25000.99
+  VIN: 00003
+*************************** 4. row ***************************
+ Make: Toyota
+Model: Camry
+ Year: 2008
+Color: Blue
+Style: Sedan
+ MSRP: 2000.50
+  VIN: 00004
+*************************** 5. row ***************************
+ Make: Dodge
+Model: 1500
+ Year: 2007
+Color: Green
+Style: Pickup
+ MSRP: 1799.99
+  VIN: 00005
+5 rows in set (0.00 sec)
+
+mysql> DESCRIBE Automobile;
+--------------
+DESCRIBE Automobile
+--------------
+
++-------+-------------------------------+------+-----+---------+----------------+
+| Field | Type                          | Null | Key | Default | Extra          |
++-------+-------------------------------+------+-----+---------+----------------+
+| Make  | varchar(15)                   | YES  |     | NULL    |                |
+| Model | varchar(15)                   | YES  |     | NULL    |                |
+| Year  | char(4)                       | YES  |     | NULL    |                |
+| Color | char(15)                      | YES  |     | NULL    |                |
+| Style | char(15)                      | YES  |     | NULL    |                |
+| MSRP  | double                        | YES  |     | NULL    |                |
+| VIN   | smallint(5) unsigned zerofill | NO   | PRI | NULL    | auto_increment |
++-------+-------------------------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
+
+mysql> Notee

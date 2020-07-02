@@ -1,0 +1,1474 @@
+mysql> SOURCE D:\DATABASE\HW\HW02\Joshi_insertContactInfoTable.sql
+--------------
+Insert into contact_info(firstName,middleInitial,lastName,suffixDescription,titleDescription,email) values ("Kunal","D","Joshi","MS","Mr.","kj4732@rit.edu")
+--------------
+
+ERROR 1046 (3D000): No database selected
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+suffixDescription,
+titleDescription,
+jobTitle,
+department,
+email,
+url,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL,
+companyPhone)
+values
+("Jacob",
+"P",
+"Jacobson",
+"Jr.",
+"Mr.",
+"Director",
+"Finance",
+"rjameson@concor.com",
+"www.concor.com/~rjames",
+"jpjacobson",
+"323-546-6834 ext.29",
+"work",
+1969-07-13,
+"All meetings must be scheduled through Charlene Reynolds",
+"Concor International Inc.",
+"143 South Main Street",
+"Los Angeles",
+"CA",
+"90012-3712",
+"USA",
+"www.concor.com",
+"323-546-6834")
+--------------
+
+ERROR 1046 (3D000): No database selected
+--------------
+Insert into contact_info
+(firstName,
+lastName,
+titleDescription,
+jobTitle,
+department,
+email,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL,
+companyPhone)
+values
+("Charlene",
+"Reynolds",
+"Mrs.",
+"Assistant to Finance Director",
+"Finance",
+"creynolds@concor.com",
+"www.concor.com/~rjames",
+"charreynolds",
+"323-546-6834 ext.30",
+"work",
+1972-06-15,
+"Very nice, but can make things difficult if you make her angry",
+"Concor International Inc.",
+"143 South Main Street",
+"Los Angeles",
+"CA",
+"90012-3712",
+"USA",
+"www.concor.com",
+"323-546-6834")
+--------------
+
+ERROR 1046 (3D000): No database selected
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+titleDescription,
+jobTitle,
+department,
+email,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName
+)
+values
+(
+"Karson",
+"B",
+"Campbell",
+"Dr.",
+"Chief Resident",
+"Pediatrics",
+"kbc232@mvch.org",
+"585-544-1212",
+"home",
+1955-01-05,
+"Wife: Molly Kids: Cassidy, Justine, and Cory.",
+"Mountain View Hospital"
+)
+--------------
+
+ERROR 1046 (3D000): No database selected
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+suffixDescription,
+titleDescription,
+jobTitle,
+department,
+email,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL)
+values
+(
+"Les",
+"M",
+"Nelson",
+"Ph.D.",
+"Prof.",
+"Professor",
+"Business",
+"Imnbus@rit.edu",
+"585-475-0000",
+"work",
+1964-03-23,
+"Hates when work is submitted late",
+"RIT",
+"Bldg.12",
+"102 Lomb Memorial Drive",
+"Rochester",
+"NY",
+"14623",
+"USA",
+"www.rit.edu"
+)
+--------------
+
+ERROR 1046 (3D000): No database selected
+--------------
+Insert into contact_info
+(firstName,
+lastName,
+titleDescription,
+email,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes
+)
+values
+("Rachel",
+"Woods",
+"Miss.",
+"goof@go.com",
+"Goofy12",
+"585-532-4332",
+"cell",
+1985-05-06,
+"Favorite color is purple")
+--------------
+
+ERROR 1046 (3D000): No database selected
+mysql> USE Conman
+Database changed
+mysql> SOURCE D:\DATABASE\HW\HW02\Joshi_insertContactInfoTable.sql
+--------------
+Insert into contact_info(firstName,middleInitial,lastName,suffixDescription,titleDescription,email) values ("Kunal","D","Joshi","MS","Mr.","kj4732@rit.edu")
+--------------
+
+ERROR 1062 (23000): Duplicate entry 'kj4732@rit.edu' for key 'PRIMARY'
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+suffixDescription,
+titleDescription,
+jobTitle,
+department,
+email,
+url,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL,
+companyPhone)
+values
+("Jacob",
+"P",
+"Jacobson",
+"Jr.",
+"Mr.",
+"Director",
+"Finance",
+"rjameson@concor.com",
+"www.concor.com/~rjames",
+"jpjacobson",
+"323-546-6834 ext.29",
+"work",
+1969-07-13,
+"All meetings must be scheduled through Charlene Reynolds",
+"Concor International Inc.",
+"143 South Main Street",
+"Los Angeles",
+"CA",
+"90012-3712",
+"USA",
+"www.concor.com",
+"323-546-6834")
+--------------
+
+ERROR 1292 (22007): Incorrect date value: '1949' for column 'birthday' at row 1
+--------------
+Insert into contact_info
+(firstName,
+lastName,
+titleDescription,
+jobTitle,
+department,
+email,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL,
+companyPhone)
+values
+("Charlene",
+"Reynolds",
+"Mrs.",
+"Assistant to Finance Director",
+"Finance",
+"creynolds@concor.com",
+"www.concor.com/~rjames",
+"charreynolds",
+"323-546-6834 ext.30",
+"work",
+1972-06-15,
+"Very nice, but can make things difficult if you make her angry",
+"Concor International Inc.",
+"143 South Main Street",
+"Los Angeles",
+"CA",
+"90012-3712",
+"USA",
+"www.concor.com",
+"323-546-6834")
+--------------
+
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+titleDescription,
+jobTitle,
+department,
+email,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName
+)
+values
+(
+"Karson",
+"B",
+"Campbell",
+"Dr.",
+"Chief Resident",
+"Pediatrics",
+"kbc232@mvch.org",
+"585-544-1212",
+"home",
+1955-01-05,
+"Wife: Molly Kids: Cassidy, Justine, and Cory.",
+"Mountain View Hospital"
+)
+--------------
+
+ERROR 1292 (22007): Incorrect date value: '1949' for column 'birthday' at row 1
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+suffixDescription,
+titleDescription,
+jobTitle,
+department,
+email,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL)
+values
+(
+"Les",
+"M",
+"Nelson",
+"Ph.D.",
+"Prof.",
+"Professor",
+"Business",
+"Imnbus@rit.edu",
+"585-475-0000",
+"work",
+1964-03-23,
+"Hates when work is submitted late",
+"RIT",
+"Bldg.12",
+"102 Lomb Memorial Drive",
+"Rochester",
+"NY",
+"14623",
+"USA",
+"www.rit.edu"
+)
+--------------
+
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+--------------
+Insert into contact_info
+(firstName,
+lastName,
+titleDescription,
+email,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes
+)
+values
+("Rachel",
+"Woods",
+"Miss.",
+"goof@go.com",
+"Goofy12",
+"585-532-4332",
+"cell",
+1985-05-06,
+"Favorite color is purple")
+--------------
+
+ERROR 1292 (22007): Incorrect date value: '1974' for column 'birthday' at row 1
+mysql> SOURCE D:\DATABASE\HW\HW02\Joshi_insertContactInfoTable.sql
+--------------
+Insert into contact_info(firstName,middleInitial,lastName,suffixDescription,titleDescription,email) values ("Kunal","D","Joshi","MS","Mr.","kj4732@rit.edu")
+--------------
+
+ERROR 1062 (23000): Duplicate entry 'kj4732@rit.edu' for key 'PRIMARY'
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+suffixDescription,
+titleDescription,
+jobTitle,
+department,
+email,
+url,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL,
+companyPhone)
+values
+("Jacob",
+"P",
+"Jacobson",
+"Jr.",
+"Mr.",
+"Director",
+"Finance",
+"rjameson@concor.com",
+"www.concor.com/~rjames",
+"jpjacobson",
+"323-546-6834 ext.29",
+"work",
+"1969-07-13",
+"All meetings must be scheduled through Charlene Reynolds",
+"Concor International Inc.",
+"143 South Main Street",
+"Los Angeles",
+"CA",
+"90012-3712",
+"USA",
+"www.concor.com",
+"323-546-6834")
+--------------
+
+Query OK, 1 row affected (0.03 sec)
+
+--------------
+Insert into contact_info
+(firstName,
+lastName,
+titleDescription,
+jobTitle,
+department,
+email,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL,
+companyPhone)
+values
+("Charlene",
+"Reynolds",
+"Mrs.",
+"Assistant to Finance Director",
+"Finance",
+"creynolds@concor.com",
+"www.concor.com/~rjames",
+"charreynolds",
+"323-546-6834 ext.30",
+"work",
+1972-06-15,
+"Very nice, but can make things difficult if you make her angry",
+"Concor International Inc.",
+"143 South Main Street",
+"Los Angeles",
+"CA",
+"90012-3712",
+"USA",
+"www.concor.com",
+"323-546-6834")
+--------------
+
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+titleDescription,
+jobTitle,
+department,
+email,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName
+)
+values
+(
+"Karson",
+"B",
+"Campbell",
+"Dr.",
+"Chief Resident",
+"Pediatrics",
+"kbc232@mvch.org",
+"585-544-1212",
+"home",
+1955-01-05,
+"Wife: Molly Kids: Cassidy, Justine, and Cory.",
+"Mountain View Hospital"
+)
+--------------
+
+ERROR 1292 (22007): Incorrect date value: '1949' for column 'birthday' at row 1
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+suffixDescription,
+titleDescription,
+jobTitle,
+department,
+email,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL)
+values
+(
+"Les",
+"M",
+"Nelson",
+"Ph.D.",
+"Prof.",
+"Professor",
+"Business",
+"Imnbus@rit.edu",
+"585-475-0000",
+"work",
+1964-03-23,
+"Hates when work is submitted late",
+"RIT",
+"Bldg.12",
+"102 Lomb Memorial Drive",
+"Rochester",
+"NY",
+"14623",
+"USA",
+"www.rit.edu"
+)
+--------------
+
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+--------------
+Insert into contact_info
+(firstName,
+lastName,
+titleDescription,
+email,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes
+)
+values
+("Rachel",
+"Woods",
+"Miss.",
+"goof@go.com",
+"Goofy12",
+"585-532-4332",
+"cell",
+1985-05-06,
+"Favorite color is purple")
+--------------
+
+ERROR 1292 (22007): Incorrect date value: '1974' for column 'birthday' at row 1
+mysql> SOURCE D:\DATABASE\HW\HW02\Joshi_insertContactInfoTable.sql
+--------------
+Insert into contact_info(firstName,middleInitial,lastName,suffixDescription,titleDescription,email) values ("Kunal","D","Joshi","MS","Mr.","kj4732@rit.edu")
+--------------
+
+ERROR 1062 (23000): Duplicate entry 'kj4732@rit.edu' for key 'PRIMARY'
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+suffixDescription,
+titleDescription,
+jobTitle,
+department,
+email,
+url,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL,
+companyPhone)
+values
+("Jacob",
+"P",
+"Jacobson",
+"Jr.",
+"Mr.",
+"Director",
+"Finance",
+"rjameson@concor.com",
+"www.concor.com/~rjames",
+"jpjacobson",
+"323-546-6834 ext.29",
+"work",
+"1969-07-13",
+"All meetings must be scheduled through Charlene Reynolds",
+"Concor International Inc.",
+"143 South Main Street",
+"Los Angeles",
+"CA",
+"90012-3712",
+"USA",
+"www.concor.com",
+"323-546-6834")
+--------------
+
+ERROR 1062 (23000): Duplicate entry 'rjameson@concor.com' for key 'PRIMARY'
+--------------
+Insert into contact_info
+(firstName,
+lastName,
+titleDescription,
+jobTitle,
+department,
+email,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL,
+companyPhone)
+values
+("Charlene",
+"Reynolds",
+"Mrs.",
+"Assistant to Finance Director",
+"Finance",
+"creynolds@concor.com",
+"www.concor.com/~rjames",
+"charreynolds",
+"323-546-6834 ext.30",
+"work",
+"1972-06-15",
+"Very nice, but can make things difficult if you make her angry",
+"Concor International Inc.",
+"143 South Main Street",
+"Los Angeles",
+"CA",
+"90012-3712",
+"USA",
+"www.concor.com",
+"323-546-6834")
+--------------
+
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+titleDescription,
+jobTitle,
+department,
+email,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName
+)
+values
+(
+"Karson",
+"B",
+"Campbell",
+"Dr.",
+"Chief Resident",
+"Pediatrics",
+"kbc232@mvch.org",
+"585-544-1212",
+"home",
+"1955-01-05",
+"Wife: Molly Kids: Cassidy, Justine, and Cory.",
+"Mountain View Hospital"
+)
+--------------
+
+Query OK, 1 row affected (0.02 sec)
+
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+suffixDescription,
+titleDescription,
+jobTitle,
+department,
+email,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL)
+values
+(
+"Les",
+"M",
+"Nelson",
+"Ph.D.",
+"Prof.",
+"Professor",
+"Business",
+"Imnbus@rit.edu",
+"585-475-0000",
+"work",
+"1964-03-23",
+"Hates when work is submitted late",
+"RIT",
+"Bldg.12",
+"102 Lomb Memorial Drive",
+"Rochester",
+"NY",
+"14623",
+"USA",
+"www.rit.edu"
+)
+--------------
+
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+--------------
+Insert into contact_info
+(firstName,
+lastName,
+titleDescription,
+email,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes
+)
+values
+("Rachel",
+"Woods",
+"Miss.",
+"goof@go.com",
+"Goofy12",
+"585-532-4332",
+"cell",
+"1985-05-06",
+"Favorite color is purple")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SOURCE D:\DATABASE\HW\HW02\Joshi_insertContactInfoTable.sql
+--------------
+Insert into contact_info(firstName,middleInitial,lastName,suffixDescription,titleDescription,email) values ("Kunal","D","Joshi","MS","Mr.","kj4732@rit.edu")
+--------------
+
+ERROR 1062 (23000): Duplicate entry 'kj4732@rit.edu' for key 'PRIMARY'
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+suffixDescription,
+titleDescription,
+jobTitle,
+department,
+email,
+url,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL,
+companyPhone)
+values
+("Jacob",
+"P",
+"Jacobson",
+"Jr.",
+"Mr.",
+"Director",
+"Finance",
+"rjameson@concor.com",
+"www.concor.com/~rjames",
+"jpjacobson",
+"323-546-6834 ext.29",
+"work",
+"1969-07-13",
+"All meetings must be scheduled through Charlene Reynolds",
+"Concor International Inc.",
+"143 South Main Street",
+"Los Angeles",
+"CA",
+"90012-3712",
+"USA",
+"www.concor.com",
+"323-546-6834")
+--------------
+
+ERROR 1062 (23000): Duplicate entry 'rjameson@concor.com' for key 'PRIMARY'
+--------------
+Insert into contact_info
+(firstName,
+lastName,
+titleDescription,
+jobTitle,
+department,
+email,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL,
+companyPhone)
+values
+("Charlene",
+"Reynolds",
+"Mrs.",
+"Assistant to Finance Director",
+"Finance",
+"creynolds@concor.com",
+"www.concor.com/~rjames",
+"charreynolds",
+"323-546-6834 ext.30",
+"work",
+"1972-06-15",
+"Very nice, but can make things difficult if you make her angry",
+"Concor International Inc.",
+"143 South Main Street",
+"Los Angeles",
+"CA",
+"90012-3712",
+"USA",
+"www.concor.com",
+"323-546-6834")
+--------------
+
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+titleDescription,
+jobTitle,
+department,
+email,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName
+)
+values
+(
+"Karson",
+"B",
+"Campbell",
+"Dr.",
+"Chief Resident",
+"Pediatrics",
+"kbc232@mvch.org",
+"585-544-1212",
+"home",
+"1955-01-05",
+"Wife: Molly Kids: Cassidy, Justine, and Cory.",
+"Mountain View Hospital"
+)
+--------------
+
+ERROR 1062 (23000): Duplicate entry 'kbc232@mvch.org' for key 'PRIMARY'
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+suffixDescription,
+titleDescription,
+jobTitle,
+department,
+email,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+addressLine2,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL)
+values
+(
+"Les",
+"M",
+"Nelson",
+"Ph.D.",
+"Prof.",
+"Professor",
+"Business",
+"Imnbus@rit.edu",
+"585-475-0000",
+"work",
+"1964-03-23",
+"Hates when work is submitted late",
+"RIT",
+"Bldg.12",
+"102 Lomb Memorial Drive",
+"Rochester",
+"NY",
+"14623",
+"USA",
+"www.rit.edu"
+)
+--------------
+
+Query OK, 1 row affected (0.03 sec)
+
+--------------
+Insert into contact_info
+(firstName,
+lastName,
+titleDescription,
+email,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes
+)
+values
+("Rachel",
+"Woods",
+"Miss.",
+"goof@go.com",
+"Goofy12",
+"585-532-4332",
+"cell",
+"1985-05-06",
+"Favorite color is purple")
+--------------
+
+ERROR 1062 (23000): Duplicate entry 'goof@go.com' for key 'PRIMARY'
+mysql> SOURCE D:\DATABASE\HW\HW02\Joshi_insertContactInfoTable.sql
+--------------
+delete from contact_info
+--------------
+
+Query OK, 5 rows affected (0.01 sec)
+
+--------------
+Insert into contact_info(firstName,middleInitial,lastName,suffixDescription,titleDescription,email) values ("Kunal","D","Joshi","MS","Mr.","kj4732@rit.edu")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+suffixDescription,
+titleDescription,
+jobTitle,
+department,
+email,
+url,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL,
+companyPhone)
+values
+("Jacob",
+"P",
+"Jacobson",
+"Jr.",
+"Mr.",
+"Director",
+"Finance",
+"rjameson@concor.com",
+"www.concor.com/~rjames",
+"jpjacobson",
+"323-546-6834 ext.29",
+"work",
+"1969-07-13",
+"All meetings must be scheduled through Charlene Reynolds",
+"Concor International Inc.",
+"143 South Main Street",
+"Los Angeles",
+"CA",
+"90012-3712",
+"USA",
+"www.concor.com",
+"323-546-6834")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into contact_info
+(firstName,
+lastName,
+titleDescription,
+jobTitle,
+department,
+email,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL,
+companyPhone)
+values
+("Charlene",
+"Reynolds",
+"Mrs.",
+"Assistant to Finance Director",
+"Finance",
+"creynolds@concor.com",
+"www.concor.com/~rjames",
+"charreynolds",
+"323-546-6834 ext.30",
+"work",
+"1972-06-15",
+"Very nice, but can make things difficult if you make her angry",
+"Concor International Inc.",
+"143 South Main Street",
+"Los Angeles",
+"CA",
+"90012-3712",
+"USA",
+"www.concor.com",
+"323-546-6834")
+--------------
+
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+titleDescription,
+jobTitle,
+department,
+email,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName
+)
+values
+(
+"Karson",
+"B",
+"Campbell",
+"Dr.",
+"Chief Resident",
+"Pediatrics",
+"kbc232@mvch.org",
+"585-544-1212",
+"home",
+"1955-01-05",
+"Wife: Molly Kids: Cassidy, Justine, and Cory.",
+"Mountain View Hospital"
+)
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+suffixDescription,
+titleDescription,
+jobTitle,
+department,
+email,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+addressLine2,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL)
+values
+(
+"Les",
+"M",
+"Nelson",
+"Ph.D.",
+"Prof.",
+"Professor",
+"Business",
+"Imnbus@rit.edu",
+"585-475-0000",
+"work",
+"1964-03-23",
+"Hates when work is submitted late",
+"RIT",
+"Bldg.12",
+"102 Lomb Memorial Drive",
+"Rochester",
+"NY",
+"14623",
+"USA",
+"www.rit.edu"
+)
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into contact_info
+(firstName,
+lastName,
+titleDescription,
+email,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes
+)
+values
+("Rachel",
+"Woods",
+"Miss.",
+"goof@go.com",
+"Goofy12",
+"585-532-4332",
+"cell",
+"1985-05-06",
+"Favorite color is purple")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SOURCE D:\DATABASE\HW\HW02\Joshi_insertContactInfoTable.sql
+--------------
+delete from contact_info
+--------------
+
+Query OK, 5 rows affected (0.05 sec)
+
+--------------
+Insert into contact_info(firstName,middleInitial,lastName,suffixDescription,titleDescription,email) values ("Kunal","D","Joshi","MS","Mr.","kj4732@rit.edu")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+suffixDescription,
+titleDescription,
+jobTitle,
+department,
+email,
+url,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL,
+companyPhone)
+values
+("Jacob",
+"P",
+"Jacobson",
+"Jr.",
+"Mr.",
+"Director",
+"Finance",
+"rjameson@concor.com",
+"www.concor.com/~rjames",
+"jpjacobson",
+"323-546-6834 ext.29",
+"work",
+"1969-07-13",
+"All meetings must be scheduled through Charlene Reynolds",
+"Concor International Inc.",
+"143 South Main Street",
+"Los Angeles",
+"CA",
+"90012-3712",
+"USA",
+"www.concor.com",
+"323-546-6834")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into contact_info
+(firstName,
+lastName,
+titleDescription,
+jobTitle,
+department,
+email,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL,
+companyPhone)
+values
+("Charlene",
+"Reynolds",
+"Mrs.",
+"Assistant to Finance Director",
+"Finance",
+"creynolds@concor.com",
+"www.concor.com/~rjames",
+"charreynolds",
+"323-546-6834 ext.30",
+"work",
+"1972-06-15",
+"Very nice, but can make things difficult if you make her angry",
+"Concor International Inc.",
+"143 South Main Street",
+"Los Angeles",
+"CA",
+"90012-3712",
+"USA",
+"www.concor.com",
+"323-546-6834")
+--------------
+
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+titleDescription,
+jobTitle,
+department,
+email,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName
+)
+values
+(
+"Karson",
+"B",
+"Campbell",
+"Dr.",
+"Chief Resident",
+"Pediatrics",
+"kbc232@mvch.org",
+"585-544-1212",
+"home",
+"1955-01-05",
+"Wife: Molly Kids: Cassidy, Justine, and Cory.",
+"Mountain View Hospital"
+)
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+suffixDescription,
+titleDescription,
+jobTitle,
+department,
+email,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+addressLine2,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL)
+values
+(
+"Les",
+"M",
+"Nelson",
+"Ph.D.",
+"Prof.",
+"Professor",
+"Business",
+"Imnbus@rit.edu",
+"585-475-0000",
+"work",
+"1964-03-23",
+"Hates when work is submitted late",
+"RIT",
+"Bldg.12",
+"102 Lomb Memorial Drive",
+"Rochester",
+"NY",
+"14623",
+"USA",
+"www.rit.edu"
+)
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into contact_info
+(firstName,
+lastName,
+titleDescription,
+email,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes
+)
+values
+("Rachel",
+"Woods",
+"Miss.",
+"goof@go.com",
+"Goofy12",
+"585-532-4332",
+"cell",
+"1985-05-06",
+"Favorite color is purple")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+mysql> Terminal close -- exit!

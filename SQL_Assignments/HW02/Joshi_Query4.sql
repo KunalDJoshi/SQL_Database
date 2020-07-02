@@ -1,0 +1,1 @@
+select firstName,lastName from contact_info where state_province<>"CA" or state_province is null;

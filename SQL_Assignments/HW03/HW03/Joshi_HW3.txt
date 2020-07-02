@@ -1,0 +1,619 @@
+mysql> # Joshi,Kunal
+mysql> # Due Date:   September 22, 2019 
+mysql> # Database Homework
+mysql> # Section ISTE230.01
+mysql> # Professor Habermas - Office (GOL) 2443
+mysql> # EMAIL  kj4732@rit.edu
+mysql> select 'ISTE-230-01', 'HW03' as "Joshi,Kunal Deepak",curdate() as "Todays Date";
+--------------
+select 'ISTE-230-01', 'HW03' as "Joshi,Kunal Deepak",curdate() as "Todays Date"
+--------------
+
++-------------+--------------------+-------------+
+| ISTE-230-01 | Joshi,Kunal Deepak | Todays Date |
++-------------+--------------------+-------------+
+| ISTE-230-01 | HW03               | 2019-09-20  |
++-------------+--------------------+-------------+
+1 row in set (0.01 sec)
+
+mysql> USE conman; 
+Database changed
+mysql> SHOW TABLES; 
+--------------
+SHOW TABLES
+--------------
+
++------------------+
+| Tables_in_conman |
++------------------+
+| contact_info     |
++------------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT * FROM contact_info\G 
+--------------
+SELECT * FROM contact_info
+--------------
+
+*************************** 1. row ***************************
+        firstName: Charlene
+    middleInitial: NULL
+         lastName: Reynolds
+suffixDescription: NULL
+ titleDescription: Mrs.
+         jobTitle: Assistant to Finance Director
+       department: Finance
+            email: creynolds@concor.com
+              url: NULL
+        IMaddress: charreynolds
+      phoneNumber: 323-546-6834 ext.30
+ phoneDescription: work
+         birthday: 1972-06-15
+            notes: Very nice, but can make things difficult if you make her angry
+      companyName: Concor International Inc.
+     addressLine1: 143 South Main Street
+     addressLine2: NULL
+             city: Los Angeles
+   state_province: CA
+   zip_postalcode: 90012-3712
+   country_region: USA
+       companyURL: www.concor.com
+     companyPhone: 323-546-6834
+*************************** 2. row ***************************
+        firstName: Rachel
+    middleInitial: NULL
+         lastName: Woods
+suffixDescription: NULL
+ titleDescription: Miss.
+         jobTitle: NULL
+       department: NULL
+            email: goof@go.com
+              url: NULL
+        IMaddress: Goofy12
+      phoneNumber: 585-532-4332
+ phoneDescription: cell
+         birthday: 1985-05-06
+            notes: Favorite color is purple
+      companyName: NULL
+     addressLine1: NULL
+     addressLine2: NULL
+             city: NULL
+   state_province: NULL
+   zip_postalcode: NULL
+   country_region: NULL
+       companyURL: NULL
+     companyPhone: NULL
+*************************** 3. row ***************************
+        firstName: Les
+    middleInitial: M
+         lastName: Nelson
+suffixDescription: Ph.D.
+ titleDescription: Prof.
+         jobTitle: Professor
+       department: Business
+            email: Imnbus@rit.edu
+              url: NULL
+        IMaddress: NULL
+      phoneNumber: 585-475-0000
+ phoneDescription: work
+         birthday: 1964-03-23
+            notes: Hates when work is submitted late
+      companyName: RIT
+     addressLine1: Bldg.12
+     addressLine2: 102 Lomb Memorial Drive
+             city: Rochester
+   state_province: NY
+   zip_postalcode: 14623
+   country_region: USA
+       companyURL: www.rit.edu
+     companyPhone: NULL
+*************************** 4. row ***************************
+        firstName: Karson
+    middleInitial: B
+         lastName: Campbell
+suffixDescription: NULL
+ titleDescription: Dr.
+         jobTitle: Chief Resident
+       department: Pediatrics
+            email: kbc232@mvch.org
+              url: NULL
+        IMaddress: NULL
+      phoneNumber: 585-544-1212
+ phoneDescription: home
+         birthday: 1955-01-05
+            notes: Wife: Molly Kids: Cassidy, Justine, and Cory.
+      companyName: Mountain View Hospital
+     addressLine1: NULL
+     addressLine2: NULL
+             city: NULL
+   state_province: NULL
+   zip_postalcode: NULL
+   country_region: NULL
+       companyURL: NULL
+     companyPhone: NULL
+*************************** 5. row ***************************
+        firstName: Kunal
+    middleInitial: D
+         lastName: Joshi
+suffixDescription: MS
+ titleDescription: Mr.
+         jobTitle: NULL
+       department: NULL
+            email: kj4732@rit.edu
+              url: NULL
+        IMaddress: NULL
+      phoneNumber: NULL
+ phoneDescription: NULL
+         birthday: NULL
+            notes: NULL
+      companyName: NULL
+     addressLine1: NULL
+     addressLine2: NULL
+             city: NULL
+   state_province: NULL
+   zip_postalcode: NULL
+   country_region: NULL
+       companyURL: NULL
+     companyPhone: NULL
+*************************** 6. row ***************************
+        firstName: Jacob
+    middleInitial: P
+         lastName: Jacobson
+suffixDescription: Jr.
+ titleDescription: Mr.
+         jobTitle: Director
+       department: Finance
+            email: rjameson@concor.com
+              url: www.concor.com/~rjames
+        IMaddress: jpjacobson
+      phoneNumber: 323-546-6834 ext.29
+ phoneDescription: work
+         birthday: 1969-07-13
+            notes: All meetings must be scheduled through Charlene Reynolds
+      companyName: Concor International Inc.
+     addressLine1: 143 South Main Street
+     addressLine2: NULL
+             city: Los Angeles
+   state_province: CA
+   zip_postalcode: 90012-3712
+   country_region: USA
+       companyURL: www.concor.com
+     companyPhone: 323-546-6834
+6 rows in set (0.00 sec)
+
+mysql> # Deleting self information from contact_info table
+mysql> delete from contact_info where firstName like "Kunal";
+--------------
+delete from contact_info where firstName like "Kunal"
+--------------
+
+Query OK, 1 row affected (0.04 sec)
+
+mysql> # Checking remaining records in contact_info table after deleting self information record
+mysql> SELECT * FROM contact_info\G 
+--------------
+SELECT * FROM contact_info
+--------------
+
+*************************** 1. row ***************************
+        firstName: Charlene
+    middleInitial: NULL
+         lastName: Reynolds
+suffixDescription: NULL
+ titleDescription: Mrs.
+         jobTitle: Assistant to Finance Director
+       department: Finance
+            email: creynolds@concor.com
+              url: NULL
+        IMaddress: charreynolds
+      phoneNumber: 323-546-6834 ext.30
+ phoneDescription: work
+         birthday: 1972-06-15
+            notes: Very nice, but can make things difficult if you make her angry
+      companyName: Concor International Inc.
+     addressLine1: 143 South Main Street
+     addressLine2: NULL
+             city: Los Angeles
+   state_province: CA
+   zip_postalcode: 90012-3712
+   country_region: USA
+       companyURL: www.concor.com
+     companyPhone: 323-546-6834
+*************************** 2. row ***************************
+        firstName: Rachel
+    middleInitial: NULL
+         lastName: Woods
+suffixDescription: NULL
+ titleDescription: Miss.
+         jobTitle: NULL
+       department: NULL
+            email: goof@go.com
+              url: NULL
+        IMaddress: Goofy12
+      phoneNumber: 585-532-4332
+ phoneDescription: cell
+         birthday: 1985-05-06
+            notes: Favorite color is purple
+      companyName: NULL
+     addressLine1: NULL
+     addressLine2: NULL
+             city: NULL
+   state_province: NULL
+   zip_postalcode: NULL
+   country_region: NULL
+       companyURL: NULL
+     companyPhone: NULL
+*************************** 3. row ***************************
+        firstName: Les
+    middleInitial: M
+         lastName: Nelson
+suffixDescription: Ph.D.
+ titleDescription: Prof.
+         jobTitle: Professor
+       department: Business
+            email: Imnbus@rit.edu
+              url: NULL
+        IMaddress: NULL
+      phoneNumber: 585-475-0000
+ phoneDescription: work
+         birthday: 1964-03-23
+            notes: Hates when work is submitted late
+      companyName: RIT
+     addressLine1: Bldg.12
+     addressLine2: 102 Lomb Memorial Drive
+             city: Rochester
+   state_province: NY
+   zip_postalcode: 14623
+   country_region: USA
+       companyURL: www.rit.edu
+     companyPhone: NULL
+*************************** 4. row ***************************
+        firstName: Karson
+    middleInitial: B
+         lastName: Campbell
+suffixDescription: NULL
+ titleDescription: Dr.
+         jobTitle: Chief Resident
+       department: Pediatrics
+            email: kbc232@mvch.org
+              url: NULL
+        IMaddress: NULL
+      phoneNumber: 585-544-1212
+ phoneDescription: home
+         birthday: 1955-01-05
+            notes: Wife: Molly Kids: Cassidy, Justine, and Cory.
+      companyName: Mountain View Hospital
+     addressLine1: NULL
+     addressLine2: NULL
+             city: NULL
+   state_province: NULL
+   zip_postalcode: NULL
+   country_region: NULL
+       companyURL: NULL
+     companyPhone: NULL
+*************************** 5. row ***************************
+        firstName: Jacob
+    middleInitial: P
+         lastName: Jacobson
+suffixDescription: Jr.
+ titleDescription: Mr.
+         jobTitle: Director
+       department: Finance
+            email: rjameson@concor.com
+              url: www.concor.com/~rjames
+        IMaddress: jpjacobson
+      phoneNumber: 323-546-6834 ext.29
+ phoneDescription: work
+         birthday: 1969-07-13
+            notes: All meetings must be scheduled through Charlene Reynolds
+      companyName: Concor International Inc.
+     addressLine1: 143 South Main Street
+     addressLine2: NULL
+             city: Los Angeles
+   state_province: CA
+   zip_postalcode: 90012-3712
+   country_region: USA
+       companyURL: www.concor.com
+     companyPhone: 323-546-6834
+5 rows in set (0.00 sec)
+
+mysql> #  Add attributes to the table 
+mysql> SOURCE D:\DATABASE\HW\HW03\Joshi_attributes.sql
+--------------
+alter table contact_info add column contactID varchar(9)
+--------------
+
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+--------------
+alter table contact_info add column suffixID varchar(9)
+--------------
+
+Query OK, 0 rows affected (0.11 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+--------------
+alter table contact_info add column titleID varchar(9)
+--------------
+
+Query OK, 0 rows affected (0.12 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+--------------
+alter table contact_info add column companyID varchar(9)
+--------------
+
+Query OK, 0 rows affected (0.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+--------------
+alter table contact_info add column phonetypeID varchar(9)
+--------------
+
+Query OK, 0 rows affected (0.11 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> # Verifying attributes added in contact_info table
+mysql> desc contact_info;
+--------------
+desc contact_info
+--------------
+
++-------------------+--------------+------+-----+---------+-------+
+| Field             | Type         | Null | Key | Default | Extra |
++-------------------+--------------+------+-----+---------+-------+
+| firstName         | varchar(25)  | YES  |     | NULL    |       |
+| middleInitial     | char(1)      | YES  |     | NULL    |       |
+| lastName          | varchar(25)  | YES  |     | NULL    |       |
+| suffixDescription | varchar(5)   | YES  |     | NULL    |       |
+| titleDescription  | varchar(5)   | YES  |     | NULL    |       |
+| jobTitle          | varchar(40)  | YES  |     | NULL    |       |
+| department        | varchar(30)  | YES  |     | NULL    |       |
+| email             | varchar(35)  | NO   | PRI | NULL    |       |
+| url               | varchar(50)  | YES  |     | NULL    |       |
+| IMaddress         | varchar(25)  | YES  |     | NULL    |       |
+| phoneNumber       | varchar(25)  | YES  |     | NULL    |       |
+| phoneDescription  | varchar(10)  | YES  |     | NULL    |       |
+| birthday          | date         | YES  |     | NULL    |       |
+| notes             | varchar(255) | YES  |     | NULL    |       |
+| companyName       | varchar(30)  | YES  |     | NULL    |       |
+| addressLine1      | varchar(40)  | YES  |     | NULL    |       |
+| addressLine2      | varchar(40)  | YES  |     | NULL    |       |
+| city              | varchar(20)  | YES  |     | NULL    |       |
+| state_province    | varchar(15)  | YES  |     | NULL    |       |
+| zip_postalcode    | varchar(10)  | YES  |     | NULL    |       |
+| country_region    | varchar(15)  | YES  |     | NULL    |       |
+| companyURL        | varchar(50)  | YES  |     | NULL    |       |
+| companyPhone      | varchar(12)  | YES  |     | NULL    |       |
+| contactID         | varchar(9)   | YES  |     | NULL    |       |
+| suffixID          | varchar(9)   | YES  |     | NULL    |       |
+| titleID           | varchar(9)   | YES  |     | NULL    |       |
+| companyID         | varchar(9)   | YES  |     | NULL    |       |
+| phonetypeID       | varchar(9)   | YES  |     | NULL    |       |
++-------------------+--------------+------+-----+---------+-------+
+28 rows in set (0.03 sec)
+
+mysql> #  Add constraints to the table 
+mysql> SOURCE D:\DATABASE\HW\HW03\Joshi_constraints.sql
+--------------
+alter table contact_info modify firstName varchar(20) NOT NULL
+--------------
+
+Query OK, 5 rows affected (0.08 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+--------------
+alter table contact_info modify lastName varchar(25) NOT NULL
+--------------
+
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+--------------
+alter table contact_info modify email varchar(30) NOT NULL
+--------------
+
+Query OK, 5 rows affected (0.07 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+--------------
+alter table contact_info modify phoneDescription varchar(10) NOT NULL
+--------------
+
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> # Verifying constraints added to contact_info table
+mysql> desc contact_info;
+--------------
+desc contact_info
+--------------
+
++-------------------+--------------+------+-----+---------+-------+
+| Field             | Type         | Null | Key | Default | Extra |
++-------------------+--------------+------+-----+---------+-------+
+| firstName         | varchar(20)  | NO   |     | NULL    |       |
+| middleInitial     | char(1)      | YES  |     | NULL    |       |
+| lastName          | varchar(25)  | NO   |     | NULL    |       |
+| suffixDescription | varchar(5)   | YES  |     | NULL    |       |
+| titleDescription  | varchar(5)   | YES  |     | NULL    |       |
+| jobTitle          | varchar(40)  | YES  |     | NULL    |       |
+| department        | varchar(30)  | YES  |     | NULL    |       |
+| email             | varchar(30)  | NO   | PRI | NULL    |       |
+| url               | varchar(50)  | YES  |     | NULL    |       |
+| IMaddress         | varchar(25)  | YES  |     | NULL    |       |
+| phoneNumber       | varchar(25)  | YES  |     | NULL    |       |
+| phoneDescription  | varchar(10)  | NO   |     | NULL    |       |
+| birthday          | date         | YES  |     | NULL    |       |
+| notes             | varchar(255) | YES  |     | NULL    |       |
+| companyName       | varchar(30)  | YES  |     | NULL    |       |
+| addressLine1      | varchar(40)  | YES  |     | NULL    |       |
+| addressLine2      | varchar(40)  | YES  |     | NULL    |       |
+| city              | varchar(20)  | YES  |     | NULL    |       |
+| state_province    | varchar(15)  | YES  |     | NULL    |       |
+| zip_postalcode    | varchar(10)  | YES  |     | NULL    |       |
+| country_region    | varchar(15)  | YES  |     | NULL    |       |
+| companyURL        | varchar(50)  | YES  |     | NULL    |       |
+| companyPhone      | varchar(12)  | YES  |     | NULL    |       |
+| contactID         | varchar(9)   | YES  |     | NULL    |       |
+| suffixID          | varchar(9)   | YES  |     | NULL    |       |
+| titleID           | varchar(9)   | YES  |     | NULL    |       |
+| companyID         | varchar(9)   | YES  |     | NULL    |       |
+| phonetypeID       | varchar(9)   | YES  |     | NULL    |       |
++-------------------+--------------+------+-----+---------+-------+
+28 rows in set (0.00 sec)
+
+mysql> # Update the existing records in the table
+mysql> SOURCE D:\DATABASE\HW\HW03\Joshi_update.sql
+--------------
+update contact_info set contactID=111, suffixID=1, titleID=1, companyID=123, phonetypeID=1 where firstName like "Jacob"
+--------------
+
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+--------------
+update contact_info set contactID=222, titleID =2, companyID=123, phonetypeID=1 where firstName like "Charlene"
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+--------------
+update contact_info set contactID=333, titleID =5, companyID=456, phonetypeID=2 where firstName like "Karson"
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+--------------
+update contact_info set contactID=444, suffixID=2, titleID=4, companyID=231, phonetypeID=1 where firstName like "Les"
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+--------------
+update contact_info set contactID=555, titleID =3, phonetypeID=3 where firstName like "Rachel"
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> # Display first name, last name and the value of all attribute values that were added to the table. 
+mysql> select firstName , lastName , contactID, suffixID, titleID, companyID, phonetypeID from contact_info;
+--------------
+select firstName , lastName , contactID, suffixID, titleID, companyID, phonetypeID from contact_info
+--------------
+
++-----------+----------+-----------+----------+---------+-----------+-------------+
+| firstName | lastName | contactID | suffixID | titleID | companyID | phonetypeID |
++-----------+----------+-----------+----------+---------+-----------+-------------+
+| Charlene  | Reynolds | 222       | NULL     | 2       | 123       | 1           |
+| Rachel    | Woods    | 555       | NULL     | 3       | NULL      | 3           |
+| Les       | Nelson   | 444       | 2        | 4       | 231       | 1           |
+| Karson    | Campbell | 333       | NULL     | 5       | 456       | 2           |
+| Jacob     | Jacobson | 111       | 1        | 1       | 123       | 1           |
++-----------+----------+-----------+----------+---------+-----------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> #  Add primary key to the table (Composite Primary Key consisting phoneNumber,contactID). Before that dropping existing Primary Key on contact_info table.
+mysql> alter table contact_info DROP PRIMARY KEY;
+--------------
+alter table contact_info DROP PRIMARY KEY
+--------------
+
+Query OK, 5 rows affected (0.09 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> SOURCE D:\DATABASE\HW\HW03\Joshi_pk.sql
+--------------
+alter table contact_info add CONSTRAINT PK_contact_info PRIMARY KEY(phoneNumber,contactID)
+--------------
+
+Query OK, 0 rows affected (0.13 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc contact_info;
+--------------
+desc contact_info
+--------------
+
++-------------------+--------------+------+-----+---------+-------+
+| Field             | Type         | Null | Key | Default | Extra |
++-------------------+--------------+------+-----+---------+-------+
+| firstName         | varchar(20)  | NO   |     | NULL    |       |
+| middleInitial     | char(1)      | YES  |     | NULL    |       |
+| lastName          | varchar(25)  | NO   |     | NULL    |       |
+| suffixDescription | varchar(5)   | YES  |     | NULL    |       |
+| titleDescription  | varchar(5)   | YES  |     | NULL    |       |
+| jobTitle          | varchar(40)  | YES  |     | NULL    |       |
+| department        | varchar(30)  | YES  |     | NULL    |       |
+| email             | varchar(30)  | NO   |     | NULL    |       |
+| url               | varchar(50)  | YES  |     | NULL    |       |
+| IMaddress         | varchar(25)  | YES  |     | NULL    |       |
+| phoneNumber       | varchar(25)  | NO   | PRI | NULL    |       |
+| phoneDescription  | varchar(10)  | NO   |     | NULL    |       |
+| birthday          | date         | YES  |     | NULL    |       |
+| notes             | varchar(255) | YES  |     | NULL    |       |
+| companyName       | varchar(30)  | YES  |     | NULL    |       |
+| addressLine1      | varchar(40)  | YES  |     | NULL    |       |
+| addressLine2      | varchar(40)  | YES  |     | NULL    |       |
+| city              | varchar(20)  | YES  |     | NULL    |       |
+| state_province    | varchar(15)  | YES  |     | NULL    |       |
+| zip_postalcode    | varchar(10)  | YES  |     | NULL    |       |
+| country_region    | varchar(15)  | YES  |     | NULL    |       |
+| companyURL        | varchar(50)  | YES  |     | NULL    |       |
+| companyPhone      | varchar(12)  | YES  |     | NULL    |       |
+| contactID         | varchar(9)   | NO   | PRI | NULL    |       |
+| suffixID          | varchar(9)   | YES  |     | NULL    |       |
+| titleID           | varchar(9)   | YES  |     | NULL    |       |
+| companyID         | varchar(9)   | YES  |     | NULL    |       |
+| phonetypeID       | varchar(9)   | YES  |     | NULL    |       |
++-------------------+--------------+------+-----+---------+-------+
+28 rows in set (0.00 sec)
+
+mysql> # Display first name, last name, contactID and phone number before deleting the records.
+mysql> SOURCE D:\DATABASE\HW\HW03\Joshi_delete.sql
+--------------
+select firstName , lastName , contactID, phoneNumber  from contact_info
+--------------
+
++-----------+----------+-----------+---------------------+
+| firstName | lastName | contactID | phoneNumber         |
++-----------+----------+-----------+---------------------+
+| Jacob     | Jacobson | 111       | 323-546-6834 ext.29 |
+| Charlene  | Reynolds | 222       | 323-546-6834 ext.30 |
+| Les       | Nelson   | 444       | 585-475-0000        |
+| Rachel    | Woods    | 555       | 585-532-4332        |
+| Karson    | Campbell | 333       | 585-544-1212        |
++-----------+----------+-----------+---------------------+
+5 rows in set (0.00 sec)
+
+--------------
+delete from contact_info where phoneNumber="585-544-1212"and contactID="333"
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+delete from contact_info where phoneNumber="585-532-4332" and contactID="555"
+--------------
+
+Query OK, 1 row affected (0.27 sec)
+
+--------------
+select firstName , lastName , contactID, phoneNumber  from contact_info
+--------------
+
++-----------+----------+-----------+---------------------+
+| firstName | lastName | contactID | phoneNumber         |
++-----------+----------+-----------+---------------------+
+| Jacob     | Jacobson | 111       | 323-546-6834 ext.29 |
+| Charlene  | Reynolds | 222       | 323-546-6834 ext.30 |
+| Les       | Nelson   | 444       | 585-475-0000        |
++-----------+----------+-----------+---------------------+
+3 rows in set (0.00 sec)
+
+mysql> notee

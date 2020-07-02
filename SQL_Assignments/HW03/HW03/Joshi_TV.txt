@@ -1,0 +1,200 @@
+mysql> # Joshi,Kunal
+mysql> # Due Date:   September 22, 2019
+mysql> # Database Homework
+mysql> # Section ISTE230.01
+mysql> # Professor Habermas - Office (GOL) 2443
+mysql> # EMAIL  kj4732@rit.edu
+mysql> select 'ISTE-230-01', 'HW03' as "Joshi,Kunal Deepak",curdate() as "Todays Date";
+--------------
+select 'ISTE-230-01', 'HW03' as "Joshi,Kunal Deepak",curdate() as "Todays Date"
+--------------
+
++-------------+--------------------+-------------+
+| ISTE-230-01 | Joshi,Kunal Deepak | Todays Date |
++-------------+--------------------+-------------+
+| ISTE-230-01 | HW03               | 2019-09-21  |
++-------------+--------------------+-------------+
+1 row in set (0.01 sec)
+
+mysql> USE tv_guide;
+Database changed
+mysql> # Inserting records in tvstation table 
+mysql> SOURCE D:\DATABASE\HW\HW03\tvstation_insert.sql
+--------------
+Insert into tvstation(channel,callLetters,city,st,phone,email,url) values(500,"WBF-TV","Rochester","NY","(585)288-8422","xyz@gmail.com","http://www.wvgh.com")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+Insert into tvstation(channel,callLetters,city,st,phone,email,url) values(501,"FOOD","Rochester","NY","(585)288-8442","gyj@gmail.com","http://www.hhah.com")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into tvstation(channel,callLetters,city,st,phone,email,url) values(502,"TBS-TV","Rochester","NY","(585)288-8444","xhb@gmail.com","http://www.hfdh.com")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into tvstation(channel,callLetters,city,st,phone,email,url) values(503,"Life-TV","Rochester","NY","(585)288-8482","jfd@gmail.com","http://www.wtih.com")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into tvstation(channel,callLetters,city,st,phone,email,url) values(504,"REELZ","New York","NY","(866)288-8622","xyz@yahoo.com","http://www.gregh.com")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into tvstation(channel,callLetters,city,st,phone,email,url) values(505,"WBF-TV","Rochester","NY","(585)288-8498","mkh@gmail.com","http://www.gogh.com")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+mysql> # Inserting records in play table
+mysql> SOURCE D:\DATABASE\HW\HW03\play_insert.sql
+--------------
+Insert into play(name,playDate,playTime,channel,episodeID,affiliate) values("Man Vs Wild","2019-09-21","22:00:00",500,4,"TBS")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into play(name,playDate,playTime,channel,episodeID,affiliate) values("Banged up abroad","2019-09-20","21:00:00",501,8,"ABC")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into play(name,playDate,playTime,channel,episodeID,affiliate) values("Cricket match","2019-09-18","20:00:00",502,6,"TBS")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into play(name,playDate,playTime,channel,episodeID,affiliate) values("Coach","2019-09-21","22:00:00",503,2,"LIFE")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into play(name,playDate,playTime,channel,episodeID,affiliate) values("Becker","2019-09-12","16:00:00",504,4,"ABC")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+Insert into play(name,playDate,playTime,channel,episodeID,affiliate) values("NY Med","2019-09-16","18:00:00",505,4,"ABC")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+mysql> # Example of a select statement with "JOIN" - EXTRACT DATA FROM 2 TABLES 
+mysql> SELECT tvstation.channel, tvstation.url, play.name, play.playdate             FROM tvstation                JOIN play USING (channel)                         ORDER BY tvstation.channel ASC; 
+--------------
+SELECT tvstation.channel, tvstation.url, play.name, play.playdate             FROM tvstation                JOIN play USING (channel)                         ORDER BY tvstation.channel ASC
+--------------
+
++---------+-------------------------------+----------------------+------------+
+| channel | url                           | name                 | playdate   |
++---------+-------------------------------+----------------------+------------+
+|       8 | http://www.rochesterfirst.com | The Big Bang Theory  | 2012-08-22 |
+|       8 | http://www.rochesterfirst.com | The Big Bang Theory  | 2016-01-27 |
+|      13 | http://www.13wham.com/        | Rachael Ray          | 2012-09-26 |
+|      13 | http://www.13wham.com/        | NY Med               | 2012-06-14 |
+|      13 | http://www.13wham.com/        | Last Man Standing    | 2012-08-21 |
+|      13 | http://www.13wham.com/        | The View             | 2012-09-26 |
+|      13 | http://www.13wham.com/        | Good Morning America | 2012-09-26 |
+|      13 | http://www.13wham.com/        | The Doctors          | 2012-09-26 |
+|      31 | http://www.foxrochester.com   | Jerry Springer       | 2012-09-26 |
+|      31 | http://www.foxrochester.com   | Family Guy           | 2012-09-23 |
+|      31 | http://www.foxrochester.com   | X Factor, The        | 2012-09-26 |
+|      31 | http://www.foxrochester.com   | Judge Joe Brown      | 2012-09-26 |
+|     231 | http://www.foodnetwork.com    | Man vs Food          | 2012-09-20 |
+|     231 | http://www.foodnetwork.com    | Chopped              | 2012-09-26 |
+|     238 | http://www.reelz.com          | Becker               | 2012-11-22 |
+|     238 | http://www.reelz.com          | Coach                | 2012-08-22 |
+|     247 | http://www.tbs.com            | The Big Bang Theory  | 2012-08-22 |
+|     247 | http://www.tbs.com            | Last Man Standing    | 2016-01-29 |
+|     252 | http://www.mylifetime.com     | Frasier              | 2012-08-22 |
+|     304 | http://www.tvland.com         | The Cosby Show       | 2012-09-22 |
+|     500 | http://www.wvgh.com           | Man Vs Wild          | 2019-09-21 |
+|     501 | http://www.hhah.com           | Banged up abroad     | 2019-09-20 |
+|     502 | http://www.hfdh.com           | Cricket match        | 2019-09-18 |
+|     503 | http://www.wtih.com           | Coach                | 2019-09-21 |
+|     504 | http://www.gregh.com          | Becker               | 2019-09-12 |
+|     505 | http://www.gogh.com           | NY Med               | 2019-09-16 |
++---------+-------------------------------+----------------------+------------+
+26 rows in set (0.00 sec)
+
+mysql> # Display records from play table
+mysql> SELECT * FROM PLAY; 
+--------------
+SELECT * FROM PLAY
+--------------
+
++----------------------+------------+----------+---------+-----------+-----------+
+| name                 | playDate   | playTime | channel | episodeID | affiliate |
++----------------------+------------+----------+---------+-----------+-----------+
+| Banged up abroad     | 2019-09-20 | 21:00:00 |     501 |         8 | ABC       |
+| Becker               | 2012-11-22 | 19:00:00 |     238 |         1 | REELZ     |
+| Becker               | 2019-09-12 | 16:00:00 |     504 |         4 | ABC       |
+| Chopped              | 2012-09-26 | 21:00:00 |     231 |        19 | FOOD      |
+| Coach                | 2012-08-22 | 15:00:00 |     238 |         1 | REELZ     |
+| Coach                | 2019-09-21 | 22:00:00 |     503 |         2 | LIFE      |
+| Cricket match        | 2019-09-18 | 20:00:00 |     502 |         6 | TBS       |
+| Family Guy           | 2012-09-23 | 21:00:00 |      31 |         1 | FOX       |
+| Frasier              | 2012-08-22 | 09:00:00 |     252 |         5 | LIFE      |
+| Good Morning America | 2012-09-26 | 07:00:00 |      13 |       207 | ABC       |
+| Jerry Springer       | 2012-09-26 | 10:00:00 |      31 |       255 | FOX       |
+| Judge Joe Brown      | 2012-09-26 | 09:00:00 |      31 |       111 | FOX       |
+| Last Man Standing    | 2012-08-21 | 20:30:00 |      13 |         5 | ABC       |
+| Last Man Standing    | 2016-01-29 | 22:00:00 |     247 |       100 | TBS       |
+| Man vs Food          | 2012-09-20 | 16:00:00 |     231 |        13 | FOOD      |
+| Man Vs Wild          | 2019-09-21 | 22:00:00 |     500 |         4 | TBS       |
+| NY Med               | 2012-06-14 | 21:00:00 |      13 |         6 | ABC       |
+| NY Med               | 2019-09-16 | 18:00:00 |     505 |         4 | ABC       |
+| Rachael Ray          | 2012-09-26 | 09:00:00 |      13 |        29 | ABC       |
+| The Big Bang Theory  | 2012-08-22 | 22:00:00 |       8 |       200 | CBS       |
+| The Big Bang Theory  | 2012-08-22 | 22:00:00 |     247 |         5 | TBS       |
+| The Big Bang Theory  | 2016-01-27 | 22:00:00 |       8 |       250 | CBS       |
+| The Cosby Show       | 2012-09-22 | 20:00:00 |     304 |        54 | TVland    |
+| The Doctors          | 2012-09-26 | 09:00:00 |      13 |         1 | ABC       |
+| The View             | 2012-09-26 | 11:00:00 |      13 |       111 | ABC       |
+| X Factor, The        | 2012-09-26 | 20:00:00 |      31 |         5 | FOX       |
++----------------------+------------+----------+---------+-----------+-----------+
+26 rows in set (0.00 sec)
+
+mysql> # Display records from tvstation table
+mysql> SELECT * FROM tvstation; 
+--------------
+SELECT * FROM tvstation
+--------------
+
++---------+-------------+-------------+------+---------------+----------------------------+-------------------------------+
+| channel | callLetters | city        | st   | phone         | email                      | url                           |
++---------+-------------+-------------+------+---------------+----------------------------+-------------------------------+
+|       8 | WROC-TV     | Rochester   | NY   | (585)288-8400 | newsroom@wroctv.com        | http://www.rochesterfirst.com |
+|      10 | WHEC-TV     | Rochester   | NY   | (585)546-5670 | news10@whec.com            | http://www.whec.com           |
+|      13 | 13WHAM      | Rochester   | NY   | (585)334-8743 | news@13wham                | http://www.13wham.com/        |
+|      31 | FOX         | Rochester   | NY   | (585)232-3700 | U/A                        | http://www.foxrochester.com   |
+|     231 | FOOD        | New York    | NY   | (866)587-4653 | U/A                        | http://www.foodnetwork.com    |
+|     238 | REELZ       | Albuquerque | NM   | U/A           | info@reelz.com             | http://www.reelz.com          |
+|     247 | TBS         | Atlanta     | GA   | U/A           | tbssuperstation@turner.com | http://www.tbs.com            |
+|     252 | Life        | NY          | NY   | (212)424-7000 | lmn@mylifetime.com         | http://www.mylifetime.com     |
+|     304 | Nick@Nite   | NULL        | NULL | NULL          | NULL                       | http://www.tvland.com         |
+|     500 | WBF-TV      | Rochester   | NY   | (585)288-8422 | xyz@gmail.com              | http://www.wvgh.com           |
+|     501 | FOOD        | Rochester   | NY   | (585)288-8442 | gyj@gmail.com              | http://www.hhah.com           |
+|     502 | TBS-TV      | Rochester   | NY   | (585)288-8444 | xhb@gmail.com              | http://www.hfdh.com           |
+|     503 | Life-TV     | Rochester   | NY   | (585)288-8482 | jfd@gmail.com              | http://www.wtih.com           |
+|     504 | REELZ       | New York    | NY   | (866)288-8622 | xyz@yahoo.com              | http://www.gregh.com          |
+|     505 | WBF-TV      | Rochester   | NY   | (585)288-8498 | mkh@gmail.com              | http://www.gogh.com           |
++---------+-------------+-------------+------+---------------+----------------------------+-------------------------------+
+15 rows in set (0.00 sec)
+
+mysql> notee

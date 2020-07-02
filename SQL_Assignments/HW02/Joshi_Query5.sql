@@ -1,0 +1,1 @@
+select firstName,lastName,phoneNumber from contact_info where phoneDescription="home" or phoneDescription="cell";

@@ -1,0 +1,68 @@
+mysql> #Name:- Joshi Kunal Deepak
+mysql> #Course:- Database ISTE230.01
+mysql> #Date:- 11/05/2019
+mysql> #PE06
+mysql> SOURCE D:\DATABASE\PE\PE6\Joshi_Week9.sql
+--------------
+DROP DATABASE IF EXISTS PEWEEK9
+--------------
+
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+--------------
+CREATE DATABASE PEWEEK9
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+Database changed
+--------------
+create table Customer(
+CustID smallint(10),
+CustName varchar(10),
+CustContact int(10),
+CONSTRAINT Customer_PK PRIMARY KEY(CustID)
+)
+--------------
+
+Query OK, 0 rows affected (0.08 sec)
+
+--------------
+create table Product(
+ProductID smallint(10),
+ProdDescription varchar(20),
+UnitPrice decimal(7,2),
+CONSTRAINT Product_PK PRIMARY KEY(ProductID)
+)
+--------------
+
+Query OK, 0 rows affected (0.07 sec)
+
+--------------
+create table PO_Detail(
+PO int(10),
+CustID smallint(10),
+ProductID smallint(10),
+Quantity decimal(5,2),
+CONSTRAINT PO_Detail_PK PRIMARY KEY(PO),
+CONSTRAINT PO_Detail_Customer_FK FOREIGN KEY(CustID) REFERENCES Customer(CustID),
+CONSTRAINT PO_Detail_Product_FK FOREIGN KEY(ProductID) REFERENCES Product(ProductID)
+)
+--------------
+
+Query OK, 0 rows affected (0.06 sec)
+
+--------------
+create table PO(
+PO int(10),
+OrderDate date,
+BillToAddress varchar(20),
+ShipToAddress varchar(20),
+CONSTRAINT PO_PK PRIMARY KEY(PO),
+CONSTRAINT PO_PO_Detail_FK FOREIGN KEY(PO) REFERENCES PO_Detail(PO)
+)
+--------------
+
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> notee

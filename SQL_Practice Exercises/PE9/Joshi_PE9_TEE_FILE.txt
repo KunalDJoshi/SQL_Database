@@ -1,0 +1,182 @@
+mysql> #Name:- Joshi Kunal Deepak
+mysql> #Course:- Database ISTE230.01
+mysql> #Date:- 11/14/2019
+mysql> #PE09
+mysql> drop database if exists PE9;
+--------------
+drop database if exists PE9
+--------------
+
+Query OK, 2 rows affected (0.06 sec)
+
+mysql> create DATABASE PE9;
+--------------
+create DATABASE PE9
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use PE9;
+Database changed
+mysql> #creating a BankAccount table which is a STRONG entity
+mysql> create table BankAccount
+    -> (
+    -> accountNo int(10),
+    -> firstName varchar(10),
+    -> lastName varchar(10),
+    -> mobile bigint(10),
+    -> city varchar(10),
+    -> amount double(10,2),
+    -> constraint BankAccount_PK PRIMARY KEY(accountNo)
+    -> );
+--------------
+create table BankAccount
+(
+accountNo int(10),
+firstName varchar(10),
+lastName varchar(10),
+mobile bigint(10),
+city varchar(10),
+amount double(10,2),
+constraint BankAccount_PK PRIMARY KEY(accountNo)
+)
+--------------
+
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> #creating a Loan table which is a WEAK entity
+mysql> create table Loan
+    -> (
+    -> accountNo int(10),
+    -> firstName varchar(10),
+    -> lastName varchar(10),
+    -> mobile bigint(10),
+    -> city varchar(10),
+    -> loanAmount double(10,2),
+    -> paymentDate date,
+    -> constraint Loan_PK PRIMARY KEY(accountNo),
+    -> constraint Loan_BankAccount_FK FOREIGN KEY(accountNo) references BankAccount(accountNo)
+    -> );
+--------------
+create table Loan
+(
+accountNo int(10),
+firstName varchar(10),
+lastName varchar(10),
+mobile bigint(10),
+city varchar(10),
+loanAmount double(10,2),
+paymentDate date,
+constraint Loan_PK PRIMARY KEY(accountNo),
+constraint Loan_BankAccount_FK FOREIGN KEY(accountNo) references BankAccount(accountNo)
+)
+--------------
+
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> Insert into BankAccount(accountNo,firstName,lastName,mobile,city,amount) values(210250,"Bill","Smith",985256245,"New York",85507.58);
+--------------
+Insert into BankAccount(accountNo,firstName,lastName,mobile,city,amount) values(210250,"Bill","Smith",985256245,"New York",85507.58)
+--------------
+
+Query OK, 1 row affected (0.03 sec)
+
+mysql> Insert into BankAccount(accountNo,firstName,lastName,mobile,city,amount) values(824524,"Sue","Johnson",588525624,"Rochester",85241.36);
+--------------
+Insert into BankAccount(accountNo,firstName,lastName,mobile,city,amount) values(824524,"Sue","Johnson",588525624,"Rochester",85241.36)
+--------------
+
+Query OK, 1 row affected (0.03 sec)
+
+mysql> Insert into BankAccount(accountNo,firstName,lastName,mobile,city,amount) values(355147,"Tom","Williams",249525614,"Chicago",95410.50);
+--------------
+Insert into BankAccount(accountNo,firstName,lastName,mobile,city,amount) values(355147,"Tom","Williams",249525614,"Chicago",95410.50)
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+mysql> Insert into BankAccount(accountNo,firstName,lastName,mobile,city,amount) values(892245,"Ann","Jones",187725624,"Boston",27328.66);
+--------------
+Insert into BankAccount(accountNo,firstName,lastName,mobile,city,amount) values(892245,"Ann","Jones",187725624,"Boston",27328.66)
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+mysql> Insert into BankAccount(accountNo,firstName,lastName,mobile,city,amount) values(288516,"Linda","Miller",288505624,"Buffalo",74560.55);
+--------------
+Insert into BankAccount(accountNo,firstName,lastName,mobile,city,amount) values(288516,"Linda","Miller",288505624,"Buffalo",74560.55)
+--------------
+
+Query OK, 1 row affected (0.03 sec)
+
+mysql> Insert into Loan(accountNo,firstName,lastName,mobile,city,loanAmount,paymentDate) values(210250,"Bill","Smith",985256245,"New York",5507.58,"2020-12-14");
+--------------
+Insert into Loan(accountNo,firstName,lastName,mobile,city,loanAmount,paymentDate) values(210250,"Bill","Smith",985256245,"New York",5507.58,"2020-12-14")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+mysql> Insert into Loan(accountNo,firstName,lastName,mobile,city,loanAmount,paymentDate) values(824524,"Sue","Johnson",588525624,"Rochester",8241.36,"2022-11-24");
+--------------
+Insert into Loan(accountNo,firstName,lastName,mobile,city,loanAmount,paymentDate) values(824524,"Sue","Johnson",588525624,"Rochester",8241.36,"2022-11-24")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+mysql> Insert into Loan(accountNo,firstName,lastName,mobile,city,loanAmount,paymentDate) values(355147,"Tom","Williams",249525614,"Chicago",9410.50,"2022-08-14");
+--------------
+Insert into Loan(accountNo,firstName,lastName,mobile,city,loanAmount,paymentDate) values(355147,"Tom","Williams",249525614,"Chicago",9410.50,"2022-08-14")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+mysql> #Question 1 Query all the records of the STRONG entity (i.e., BankAccount table here)
+mysql> select accountNo,firstName,lastName,mobile,city,amount from BankAccount;
+--------------
+select accountNo,firstName,lastName,mobile,city,amount from BankAccount
+--------------
+
++-----------+-----------+----------+------------+-----------+----------+
+| accountNo | firstName | lastName | mobile     | city      | amount   |
++-----------+-----------+----------+------------+-----------+----------+
+|    210250 | Bill      | Smith    |  985256245 | New York  | 85507.58 |
+|    288516 | Linda     | Miller   |  288505624 | Buffalo   | 74560.55 |
+|    355147 | Tom       | Williams |  249525614 | Chicago   | 95410.50 |
+|    824524 | Sue       | Johnson  |  588525624 | Rochester | 85241.36 |
+|    892245 | Ann       | Jones    |  187725624 | Boston    | 27328.66 |
++-----------+-----------+----------+------------+-----------+----------+
+5 rows in set (0.00 sec)
+
+mysql> #Question 2 Query all the records of the WEAK entity (i.e., Loan table here)
+mysql> select accountNo,firstName,lastName,mobile,city,loanAmount,paymentDate from Loan;
+--------------
+select accountNo,firstName,lastName,mobile,city,loanAmount,paymentDate from Loan
+--------------
+
++-----------+-----------+----------+------------+-----------+------------+-------------+
+| accountNo | firstName | lastName | mobile     | city      | loanAmount | paymentDate |
++-----------+-----------+----------+------------+-----------+------------+-------------+
+|    210250 | Bill      | Smith    |  985256245 | New York  |    5507.58 | 2020-12-14  |
+|    355147 | Tom       | Williams |  249525614 | Chicago   |    9410.50 | 2022-08-14  |
+|    824524 | Sue       | Johnson  |  588525624 | Rochester |    8241.36 | 2022-11-24  |
++-----------+-----------+----------+------------+-----------+------------+-------------+
+3 rows in set (0.00 sec)
+
+mysql> #Question 3 Query of selective data from BOTH the STRONG entity & WEAK entity
+mysql> select ba.accountNo, ba.firstName, ba.lastName,ba.mobile,ba.city,ba.amount as balance,la.loanAmount,la.paymentDate from 
+    -> BankAccount ba, Loan la where ba.accountNo=la.accountNo;
+--------------
+select ba.accountNo, ba.firstName, ba.lastName,ba.mobile,ba.city,ba.amount as balance,la.loanAmount,la.paymentDate from 
+BankAccount ba, Loan la where ba.accountNo=la.accountNo
+--------------
+
++-----------+-----------+----------+------------+-----------+----------+------------+-------------+
+| accountNo | firstName | lastName | mobile     | city      | balance  | loanAmount | paymentDate |
++-----------+-----------+----------+------------+-----------+----------+------------+-------------+
+|    210250 | Bill      | Smith    |  985256245 | New York  | 85507.58 |    5507.58 | 2020-12-14  |
+|    355147 | Tom       | Williams |  249525614 | Chicago   | 95410.50 |    9410.50 | 2022-08-14  |
+|    824524 | Sue       | Johnson  |  588525624 | Rochester | 85241.36 |    8241.36 | 2022-11-24  |
++-----------+-----------+----------+------------+-----------+----------+------------+-------------+
+3 rows in set (0.00 sec)
+
+mysql> notee

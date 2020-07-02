@@ -1,0 +1,401 @@
+mysql> -- Joshi,Kunal
+mysql> -- 09/7/2019
+mysql> -- Homework #2 
+mysql> -- EMAIL  kj4732@rit.edu
+mysql> select 'ISTE-230-01', 'HW02' as "Joshi,Kunal Deepak",curdate() as "Todays Date";
+--------------
+select 'ISTE-230-01', 'HW02' as "Joshi,Kunal Deepak",curdate() as "Todays Date"
+--------------
+
++-------------+--------------------+-------------+
+| ISTE-230-01 | Joshi,Kunal Deepak | Todays Date |
++-------------+--------------------+-------------+
+| ISTE-230-01 | HW02               | 2019-09-07  |
++-------------+--------------------+-------------+
+1 row in set (0.00 sec)
+
+mysql> #Question 1 --  Create the database named Conman
+mysql> CREATE DATABASE Conman; 
+--------------
+CREATE DATABASE Conman
+--------------
+
+Query OK, 1 row affected (0.03 sec)
+
+mysql> -- Now we will work with Conman database 
+mysql> USE Conman; 
+Database changed
+mysql> #Question 2 --  Create the contact_info table in Conman database
+mysql> SOURCE D:\DATABASE\HW\HW02\Joshi_createContactInfoTable.sql
+--------------
+create table contact_info 
+(
+firstName varchar(25),
+middleInitial char(1),
+lastName varchar(25),
+suffixDescription varchar(5),
+titleDescription varchar(5),
+jobTitle varchar(40),
+department varchar(30),
+email varchar(35),
+url varchar(50),
+IMaddress varchar(25),
+phoneNumber varchar(25),
+phoneDescription varchar(10),
+birthday date,
+notes varchar(255),
+companyName varchar(30),
+addressLine1 varchar(40),
+addressLine2 varchar(40),
+city varchar(20),
+state_province varchar(15),
+zip_postalcode varchar(10),
+country_region varchar(15),
+companyURL varchar(50),
+companyPhone varchar(12),
+PRIMARY KEY(email)
+)
+--------------
+
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> -- Now verifying the structure of the contact_info table
+mysql> DESCRIBE contact_info;
+--------------
+DESCRIBE contact_info
+--------------
+
++-------------------+--------------+------+-----+---------+-------+
+| Field             | Type         | Null | Key | Default | Extra |
++-------------------+--------------+------+-----+---------+-------+
+| firstName         | varchar(25)  | YES  |     | NULL    |       |
+| middleInitial     | char(1)      | YES  |     | NULL    |       |
+| lastName          | varchar(25)  | YES  |     | NULL    |       |
+| suffixDescription | varchar(5)   | YES  |     | NULL    |       |
+| titleDescription  | varchar(5)   | YES  |     | NULL    |       |
+| jobTitle          | varchar(40)  | YES  |     | NULL    |       |
+| department        | varchar(30)  | YES  |     | NULL    |       |
+| email             | varchar(35)  | NO   | PRI | NULL    |       |
+| url               | varchar(50)  | YES  |     | NULL    |       |
+| IMaddress         | varchar(25)  | YES  |     | NULL    |       |
+| phoneNumber       | varchar(25)  | YES  |     | NULL    |       |
+| phoneDescription  | varchar(10)  | YES  |     | NULL    |       |
+| birthday          | date         | YES  |     | NULL    |       |
+| notes             | varchar(255) | YES  |     | NULL    |       |
+| companyName       | varchar(30)  | YES  |     | NULL    |       |
+| addressLine1      | varchar(40)  | YES  |     | NULL    |       |
+| addressLine2      | varchar(40)  | YES  |     | NULL    |       |
+| city              | varchar(20)  | YES  |     | NULL    |       |
+| state_province    | varchar(15)  | YES  |     | NULL    |       |
+| zip_postalcode    | varchar(10)  | YES  |     | NULL    |       |
+| country_region    | varchar(15)  | YES  |     | NULL    |       |
+| companyURL        | varchar(50)  | YES  |     | NULL    |       |
+| companyPhone      | varchar(12)  | YES  |     | NULL    |       |
++-------------------+--------------+------+-----+---------+-------+
+23 rows in set (0.03 sec)
+
+mysql> #Question 3 -- Inserting data into contact_info table
+mysql> SOURCE D:\DATABASE\HW\HW02\Joshi_insertContactInfoTable.sql
+--------------
+Insert into contact_info(firstName,middleInitial,lastName,suffixDescription,titleDescription,email) values ("Kunal","D","Joshi","MS","Mr.","kj4732@rit.edu")
+--------------
+
+Query OK, 1 row affected (0.03 sec)
+
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+suffixDescription,
+titleDescription,
+jobTitle,
+department,
+email,
+url,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL,
+companyPhone)
+values
+("Jacob",
+"P",
+"Jacobson",
+"Jr.",
+"Mr.",
+"Director",
+"Finance",
+"rjameson@concor.com",
+"www.concor.com/~rjames",
+"jpjacobson",
+"323-546-6834 ext.29",
+"work",
+"1969-07-13",
+"All meetings must be scheduled through Charlene Reynolds",
+"Concor International Inc.",
+"143 South Main Street",
+"Los Angeles",
+"CA",
+"90012-3712",
+"USA",
+"www.concor.com",
+"323-546-6834")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into contact_info
+(firstName,
+lastName,
+titleDescription,
+jobTitle,
+department,
+email,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL,
+companyPhone)
+values
+("Charlene",
+"Reynolds",
+"Mrs.",
+"Assistant to Finance Director",
+"Finance",
+"creynolds@concor.com",
+"charreynolds",
+"323-546-6834 ext.30",
+"work",
+"1972-06-15",
+"Very nice, but can make things difficult if you make her angry",
+"Concor International Inc.",
+"143 South Main Street",
+"Los Angeles",
+"CA",
+"90012-3712",
+"USA",
+"www.concor.com",
+"323-546-6834")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+titleDescription,
+jobTitle,
+department,
+email,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName
+)
+values
+(
+"Karson",
+"B",
+"Campbell",
+"Dr.",
+"Chief Resident",
+"Pediatrics",
+"kbc232@mvch.org",
+"585-544-1212",
+"home",
+"1955-01-05",
+"Wife: Molly Kids: Cassidy, Justine, and Cory.",
+"Mountain View Hospital"
+)
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into contact_info
+(firstName,
+middleInitial,
+lastName,
+suffixDescription,
+titleDescription,
+jobTitle,
+department,
+email,
+phoneNumber,
+phoneDescription,
+birthday,
+notes,
+companyName,
+addressLine1,
+addressLine2,
+city,
+state_province,
+zip_postalcode,
+country_region,
+companyURL)
+values
+(
+"Les",
+"M",
+"Nelson",
+"Ph.D.",
+"Prof.",
+"Professor",
+"Business",
+"Imnbus@rit.edu",
+"585-475-0000",
+"work",
+"1964-03-23",
+"Hates when work is submitted late",
+"RIT",
+"Bldg.12",
+"102 Lomb Memorial Drive",
+"Rochester",
+"NY",
+"14623",
+"USA",
+"www.rit.edu"
+)
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Insert into contact_info
+(firstName,
+lastName,
+titleDescription,
+email,
+IMaddress,
+phoneNumber,
+phoneDescription,
+birthday,
+notes
+)
+values
+("Rachel",
+"Woods",
+"Miss.",
+"goof@go.com",
+"Goofy12",
+"585-532-4332",
+"cell",
+"1985-05-06",
+"Favorite color is purple")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+mysql> -- To verify that the information has been successfully inserted into the contact_info table 
+mysql> SELECT * FROM contact_info; 
+--------------
+SELECT * FROM contact_info
+--------------
+
++-----------+---------------+----------+-------------------+------------------+-------------------------------+------------+----------------------+------------------------+--------------+---------------------+------------------+------------+----------------------------------------------------------------+---------------------------+-----------------------+-------------------------+-------------+----------------+----------------+----------------+----------------+--------------+
+| firstName | middleInitial | lastName | suffixDescription | titleDescription | jobTitle                      | department | email                | url                    | IMaddress    | phoneNumber         | phoneDescription | birthday   | notes                                                          | companyName               | addressLine1          | addressLine2            | city        | state_province | zip_postalcode | country_region | companyURL     | companyPhone |
++-----------+---------------+----------+-------------------+------------------+-------------------------------+------------+----------------------+------------------------+--------------+---------------------+------------------+------------+----------------------------------------------------------------+---------------------------+-----------------------+-------------------------+-------------+----------------+----------------+----------------+----------------+--------------+
+| Charlene  | NULL          | Reynolds | NULL              | Mrs.             | Assistant to Finance Director | Finance    | creynolds@concor.com | NULL                   | charreynolds | 323-546-6834 ext.30 | work             | 1972-06-15 | Very nice, but can make things difficult if you make her angry | Concor International Inc. | 143 South Main Street | NULL                    | Los Angeles | CA             | 90012-3712     | USA            | www.concor.com | 323-546-6834 |
+| Rachel    | NULL          | Woods    | NULL              | Miss.            | NULL                          | NULL       | goof@go.com          | NULL                   | Goofy12      | 585-532-4332        | cell             | 1985-05-06 | Favorite color is purple                                       | NULL                      | NULL                  | NULL                    | NULL        | NULL           | NULL           | NULL           | NULL           | NULL         |
+| Les       | M             | Nelson   | Ph.D.             | Prof.            | Professor                     | Business   | Imnbus@rit.edu       | NULL                   | NULL         | 585-475-0000        | work             | 1964-03-23 | Hates when work is submitted late                              | RIT                       | Bldg.12               | 102 Lomb Memorial Drive | Rochester   | NY             | 14623          | USA            | www.rit.edu    | NULL         |
+| Karson    | B             | Campbell | NULL              | Dr.              | Chief Resident                | Pediatrics | kbc232@mvch.org      | NULL                   | NULL         | 585-544-1212        | home             | 1955-01-05 | Wife: Molly Kids: Cassidy, Justine, and Cory.                  | Mountain View Hospital    | NULL                  | NULL                    | NULL        | NULL           | NULL           | NULL           | NULL           | NULL         |
+| Kunal     | D             | Joshi    | MS                | Mr.              | NULL                          | NULL       | kj4732@rit.edu       | NULL                   | NULL         | NULL                | NULL             | NULL       | NULL                                                           | NULL                      | NULL                  | NULL                    | NULL        | NULL           | NULL           | NULL           | NULL           | NULL         |
+| Jacob     | P             | Jacobson | Jr.               | Mr.              | Director                      | Finance    | rjameson@concor.com  | www.concor.com/~rjames | jpjacobson   | 323-546-6834 ext.29 | work             | 1969-07-13 | All meetings must be scheduled through Charlene Reynolds       | Concor International Inc. | 143 South Main Street | NULL                    | Los Angeles | CA             | 90012-3712     | USA            | www.concor.com | 323-546-6834 |
++-----------+---------------+----------+-------------------+------------------+-------------------------------+------------+----------------------+------------------------+--------------+---------------------+------------------+------------+----------------------------------------------------------------+---------------------------+-----------------------+-------------------------+-------------+----------------+----------------+----------------+----------------+--------------+
+6 rows in set (0.03 sec)
+
+mysql> #Question 4 -- Query the contact_info table
+mysql> select firstnames,lastnames from contact_info where lastName like "Nelson";
+--------------
+select firstnames,lastnames from contact_info where lastName like "Nelson"
+--------------
+
++-----------+----------+
+| firstName | lastName |
++-----------+----------+
+| Les       | Nelson   |
++-----------+----------+
+1 row in set (0.01 sec)
+
+mysql> select firstName,lastName,jobTitle,department from contact_info where companyName like "Concor International Inc.";
+--------------
+select firstName,lastName,jobTitle,department from contact_info where companyName like "Concor International Inc."
+--------------
+
++-----------+----------+-------------------------------+------------+
+| firstName | lastName | jobTitle                      | department |
++-----------+----------+-------------------------------+------------+
+| Charlene  | Reynolds | Assistant to Finance Director | Finance    |
+| Jacob     | Jacobson | Director                      | Finance    |
++-----------+----------+-------------------------------+------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM contact_info;
+--------------
+SELECT * FROM contact_info
+--------------
+
++-----------+---------------+----------+-------------------+------------------+-------------------------------+------------+----------------------+------------------------+--------------+---------------------+------------------+------------+----------------------------------------------------------------+---------------------------+-----------------------+-------------------------+-------------+----------------+----------------+----------------+----------------+--------------+
+| firstName | middleInitial | lastName | suffixDescription | titleDescription | jobTitle                      | department | email                | url                    | IMaddress    | phoneNumber         | phoneDescription | birthday   | notes                                                          | companyName               | addressLine1          | addressLine2            | city        | state_province | zip_postalcode | country_region | companyURL     | companyPhone |
++-----------+---------------+----------+-------------------+------------------+-------------------------------+------------+----------------------+------------------------+--------------+---------------------+------------------+------------+----------------------------------------------------------------+---------------------------+-----------------------+-------------------------+-------------+----------------+----------------+----------------+----------------+--------------+
+| Charlene  | NULL          | Reynolds | NULL              | Mrs.             | Assistant to Finance Director | Finance    | creynolds@concor.com | NULL                   | charreynolds | 323-546-6834 ext.30 | work             | 1972-06-15 | Very nice, but can make things difficult if you make her angry | Concor International Inc. | 143 South Main Street | NULL                    | Los Angeles | CA             | 90012-3712     | USA            | www.concor.com | 323-546-6834 |
+| Rachel    | NULL          | Woods    | NULL              | Miss.            | NULL                          | NULL       | goof@go.com          | NULL                   | Goofy12      | 585-532-4332        | cell             | 1985-05-06 | Favorite color is purple                                       | NULL                      | NULL                  | NULL                    | NULL        | NULL           | NULL           | NULL           | NULL           | NULL         |
+| Les       | M             | Nelson   | Ph.D.             | Prof.            | Professor                     | Business   | Imnbus@rit.edu       | NULL                   | NULL         | 585-475-0000        | work             | 1964-03-23 | Hates when work is submitted late                              | RIT                       | Bldg.12               | 102 Lomb Memorial Drive | Rochester   | NY             | 14623          | USA            | www.rit.edu    | NULL         |
+| Karson    | B             | Campbell | NULL              | Dr.              | Chief Resident                | Pediatrics | kbc232@mvch.org      | NULL                   | NULL         | 585-544-1212        | home             | 1955-01-05 | Wife: Molly Kids: Cassidy, Justine, and Cory.                  | Mountain View Hospital    | NULL                  | NULL                    | NULL        | NULL           | NULL           | NULL           | NULL           | NULL         |
+| Kunal     | D             | Joshi    | MS                | Mr.              | NULL                          | NULL       | kj4732@rit.edu       | NULL                   | NULL         | NULL                | NULL             | NULL       | NULL                                                           | NULL                      | NULL                  | NULL                    | NULL        | NULL           | NULL           | NULL           | NULL           | NULL         |
+| Jacob     | P             | Jacobson | Jr.               | Mr.              | Director                      | Finance    | rjameson@concor.com  | www.concor.com/~rjames | jpjacobson   | 323-546-6834 ext.29 | work             | 1969-07-13 | All meetings must be scheduled through Charlene Reynolds       | Concor International Inc. | 143 South Main Street | NULL                    | Los Angeles | CA             | 90012-3712     | USA            | www.concor.com | 323-546-6834 |
++-----------+---------------+----------+-------------------+------------------+-------------------------------+------------+----------------------+------------------------+--------------+---------------------+------------------+------------+----------------------------------------------------------------+---------------------------+-----------------------+-------------------------+-------------+----------------+----------------+----------------+----------------+--------------+
+6 rows in set (0.01 sec)
+
+mysql> select firstName,lastName from contact_info where state_province<>"CA";
+--------------
+select firstName,lastName from contact_info where state_province<>"CA"
+--------------
+
++-----------+----------+
+| firstName | lastName |
++-----------+----------+
+| Les       | Nelson   |
++-----------+----------+
+1 row in set (0.00 sec)
+
+mysql> select firstName,lastName,phoneNumber from contact_info where phoneDescription is in ("home","cell");
+--------------
+select firstName,lastName,phoneNumber from contact_info where phoneDescription is in ("home","cell")
+--------------
+
+mysql> select firstName,lastName,phoneNumber from contact_info where phoneDescription="home" or phoneDescription="cell";
+--------------
+select firstName,lastName,phoneNumber from contact_info where phoneDescription="home" or phoneDescription="cell"
+--------------
+
++-----------+----------+--------------+
+| firstName | lastName | phoneNumber  |
++-----------+----------+--------------+
+| Rachel    | Woods    | 585-532-4332 |
+| Karson    | Campbell | 585-544-1212 |
++-----------+----------+--------------+
+2 rows in set (0.01 sec)
+
+mysql> notee
